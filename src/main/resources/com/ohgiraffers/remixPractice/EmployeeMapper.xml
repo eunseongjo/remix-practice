@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.remixPractice.EmployeeMapper">
+    <resultMap id="empResultMap" type="com.ohgiraffers.remixPractice.EmployeeMapper">
+        <id property="id" column="EMP_ID"/>
+        <result property="name" column="EMP_NAME"/>
+        <result property="no" column="EMP_NO"/>
+        <result property="email" column="EMAIL"/>
+        <result property="phone" column="PHONE"/>
+    </resultMap>
+    <select id="selectAllEmployee" resultMap="empResultMap">
+        SELECT
+            EMP_ID
+        , EMP_NAME
+        , EMP_NO
+        , EMAIL
+        , PHONE
+        FROM EMPLOYEE
+        ORDER BY MENU_CODE
+    </select>
+    <select id="selectEmployeeByCode" parameterType="_int" resultMap="empResultMap">
+        SELECT
+            EMP_ID
+             , EMP_NAME
+             , EMP_NO
+             , EMAIL
+             , PHONE
+        FROM EMPLOYEE
+    </select>
+    <insert id="insertEmployee" parameterType="com.ohgiraffers.remixPractice.EmployeeDTO">
+        INSERT INTO EMPLOYEE (
+                               EMP_NAME
+                             , EMP_NO
+                             , EMAIL
+                             , PHONE
+        )
+        VALUES
+            (
+              #{ name }
+            , #{ no }
+            , #{ email }
+            , #{ phone }
+            )
+    </insert>
+    <update id="updateEmployee" parameterType="com.ohgiraffers.remixPractice.EmployeeDTO">
+        UPDATE EMPLOYEE
+        SET   EMP_NAME = #{ name }
+          , EMP_NO = #{ no }
+          , EMAIL = #{ email }
+          , PHONE = #{ phone }
+        WHERE EMP_ID = #{ id }
+    </update>
+    <delete id="deleteEmployee" parameterType="_int">
+        DELETE
+        FROM EMPLOYEE
+        WHERE EMP_ID = #{ id }
+    </delete>
+</mapper>
