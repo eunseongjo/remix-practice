@@ -35,8 +35,8 @@ public class Application {
     private static Map<String, String> inputModifyEmployee() {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("수정할 직원의 코드를 입력하세요 : ");
-        String code = sc.nextLine();
+        System.out.println("수정할 직원의 id를 입력하세요 : ");
+        String id = sc.nextLine();
         System.out.println("수정할 직원의 이름을 입력하세요 : ");
         String name = sc.nextLine();
         System.out.println("수정할 직원 번호를 입력하세요 : ");
@@ -45,13 +45,19 @@ public class Application {
         String email = sc.nextLine();
         System.out.println("수정할 직원의 전화번호를 입력하세요 : ");
         String phone = sc.nextLine();
+        System.out.println("수정할 직원의 잡코드를 입력하세요 : ");
+        String jobCode = sc.nextLine();
+        System.out.println("수정할 직원의 직책을 입력하세요 : ");
+        String salLevel = sc.nextLine();
 
         Map<String, String> parameter = new HashMap<>();
-        parameter.put("code", code);
+        parameter.put("id", id);
         parameter.put("name", name);
         parameter.put("no", no);
         parameter.put("email", email);
         parameter.put("phone", phone);
+        parameter.put("jobCode", jobCode);
+        parameter.put("salLevel", salLevel);
 
         return parameter;
     }
@@ -66,12 +72,18 @@ public class Application {
         String email = sc.nextLine();
         System.out.println("직원의 전화번호를 입력하세요 : ");
         String phone = sc.nextLine();
+        System.out.println("직원의 잡코드를 입력하세요 : ");
+        String jobCode = sc.nextLine();
+        System.out.println("직원의 직책을 입력하세요 : ");
+        String salLevel = sc.nextLine();
 
         Map<String, String> parameter = new HashMap<>();
         parameter.put("name", name);
         parameter.put("no", no);
         parameter.put("email", email);
         parameter.put("phone", phone);
+        parameter.put("jobCode", jobCode);
+        parameter.put("salLevel", salLevel);
 
         return parameter;
     }

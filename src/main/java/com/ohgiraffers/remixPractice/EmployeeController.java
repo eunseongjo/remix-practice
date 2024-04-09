@@ -17,6 +17,7 @@ public class EmployeeController {
 
         if(employeeDTOList != null){
             printResult.printEmployeeList(employeeDTOList);
+            printResult.printSuccessMessage("selectAll");
         }else{
             printResult.printErrorMassage("selectList");
         }
@@ -30,7 +31,8 @@ public class EmployeeController {
         EmployeeDTO emp = employeeService.selectEmployeeByCode(id);
 
         if(emp != null){
-            printResult.printEmployeeList(emp);
+            printResult.printEmployee(emp);
+            printResult.printSuccessMessage("selectEmp");
         }else{
             printResult.printErrorMassage("selectEmp");
         }
@@ -42,32 +44,44 @@ public class EmployeeController {
         String no = parameter.get("no");
         String email = parameter.get("email");
         String phone = parameter.get("phone");
+        String jobCode = parameter.get("jobCode");
+        String salLevel = parameter.get("salLevel");
 
         EmployeeDTO emp = new EmployeeDTO();
         emp.setName(name);
-        emp.setEmpNo(no);
+        emp.setNo(no);
         emp.setEmail(email);
         emp.setPhone(phone);
+        emp.setJobCode(jobCode);
+        emp.setSalLevel(salLevel);
 
-        if(EmployeeService.addEmployee(emp)){
+        if(employeeService.addEmployee(emp)){
             printResult.printSuccessMessage("insert");
+        }else{
+            printResult.printErrorMassage("insert");
         }
 
     }
 
     public void modifyEmployee(Map<String, String> parameter) {
+        int id = Integer.parseInt(parameter.get("id"));
         String name = parameter.get("name");
         String no = parameter.get("no");
         String email = parameter.get("email");
         String phone = parameter.get("phone");
+        String jobCode = parameter.get("jobCode");
+        String salLevel = parameter.get("salLevel");
 
         EmployeeDTO emp = new EmployeeDTO();
+        emp.setId(id);
         emp.setName(name);
-        emp.setEmpNo(no);
+        emp.setNo(no);
         emp.setEmail(email);
         emp.setPhone(phone);
+        emp.setJobCode(jobCode);
+        emp.setSalLevel(salLevel);
 
-        if(EmployeeService.modifyEmployee(emp)){
+        if(employeeService.modifyEmployee(emp)){
             printResult.printSuccessMessage("update");
         }else{
             printResult.printErrorMassage("update");
@@ -76,9 +90,9 @@ public class EmployeeController {
 
     public void deleteEmployee(Map<String, String> parameter) {
 
-        int id = Integer.parseInt(parameter.put("id"));
+        int id = Integer.parseInt(parameter.get("id"));
 
-        if (EmployeeService.deleteEmployee(id)) {
+        if (employeeService.deleteEmployee(id)) {
             printResult.printSuccessMessage("delete");
     }else{
             printResult.printErrorMassage("delete");

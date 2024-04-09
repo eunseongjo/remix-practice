@@ -4,16 +4,22 @@ public class EmployeeDTO {
 
     private int id;
     private String name;
-    private String empNo;
+    private String no;
     private String email;
     private String phone;
+    private String jobCode;
+    private String salLevel;
 
-    public EmployeeDTO(int id, String name, String empNo, String email, String phone) {
+    public EmployeeDTO(){}
+
+    public EmployeeDTO(int id, String name, String no, String email, String phone, String jobCode, String salLevel) {
         this.id = id;
         this.name = name;
-        this.empNo = empNo;
+        this.no = no;
         this.email = email;
         this.phone = phone;
+        this.jobCode = jobCode;
+        this.salLevel = salLevel;
     }
 
     public int getId() {
@@ -32,12 +38,12 @@ public class EmployeeDTO {
         this.name = name;
     }
 
-    public String getEmpNo() {
-        return empNo;
+    public String getNo() {
+        return no;
     }
 
-    public void setEmpNo(String empNo) {
-        this.empNo = empNo;
+    public void setNo(String no) {
+        this.no = no;
     }
 
     public String getEmail() {
@@ -56,14 +62,32 @@ public class EmployeeDTO {
         this.phone = phone;
     }
 
+    public String getJobCode() {
+        return jobCode;
+    }
+
+    public void setJobCode(String jobCode) {
+        this.jobCode = jobCode;
+    }
+
+    public String getSalLevel() {
+        return salLevel;
+    }
+
+    public void setSalLevel(String salLevel) {
+        this.salLevel = salLevel;
+    }
+
     @Override
     public String toString() {
         return "EmployeeDTO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", empNo='" + empNo + '\'' +
+                ", no='" + no + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
+                ", jobCode='" + jobCode + '\'' +
+                ", salLevel='" + salLevel + '\'' +
                 '}';
     }
 }

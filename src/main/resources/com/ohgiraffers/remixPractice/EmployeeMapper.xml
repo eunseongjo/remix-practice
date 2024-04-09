@@ -3,12 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ohgiraffers.remixPractice.EmployeeMapper">
-    <resultMap id="empResultMap" type="com.ohgiraffers.remixPractice.EmployeeMapper">
+    <resultMap id="empResultMap" type="com.ohgiraffers.remixPractice.EmployeeDTO">
         <id property="id" column="EMP_ID"/>
         <result property="name" column="EMP_NAME"/>
         <result property="no" column="EMP_NO"/>
         <result property="email" column="EMAIL"/>
         <result property="phone" column="PHONE"/>
+        <result property="jobCode" column="JOB_CODE"/>
+        <result property="salLevel" column="SAL_LEVEL"/>
     </resultMap>
     <select id="selectAllEmployee" resultMap="empResultMap">
         SELECT
@@ -17,8 +19,10 @@
         , EMP_NO
         , EMAIL
         , PHONE
+        , JOB_CODE
+        , SAL_LEVEL
         FROM EMPLOYEE
-        ORDER BY MENU_CODE
+        ORDER BY EMP_ID
     </select>
     <select id="selectEmployeeByCode" parameterType="_int" resultMap="empResultMap">
         SELECT
@@ -27,29 +31,40 @@
              , EMP_NO
              , EMAIL
              , PHONE
+             , JOB_CODE
+             , SAL_LEVEL
         FROM EMPLOYEE
+        WHERE EMP_ID = #{id}
     </select>
     <insert id="insertEmployee" parameterType="com.ohgiraffers.remixPractice.EmployeeDTO">
         INSERT INTO EMPLOYEE (
-                               EMP_NAME
+                              EMP_ID
+                              , EMP_NAME
                              , EMP_NO
                              , EMAIL
                              , PHONE
+                             , JOB_CODE
+                             , SAL_LEVEL
         )
         VALUES
             (
-              #{ name }
-            , #{ no }
-            , #{ email }
-            , #{ phone }
+             #{id}
+            , #{name}
+            , #{no}
+            , #{email}
+            , #{phone}
+            , #{jobCode}
+            , #{salLevel}
             )
     </insert>
-    <update id="updateEmployee" parameterType="com.ohgiraffers.remixPractice.EmployeeDTO">
+    <update id="modifyEmployee" parameterType="com.ohgiraffers.remixPractice.EmployeeDTO">
         UPDATE EMPLOYEE
         SET   EMP_NAME = #{ name }
           , EMP_NO = #{ no }
           , EMAIL = #{ email }
           , PHONE = #{ phone }
+          ,JOB_CODE = #{jobCode}
+          ,SAL_LEVEL = #{salLevel}
         WHERE EMP_ID = #{ id }
     </update>
     <delete id="deleteEmployee" parameterType="_int">

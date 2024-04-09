@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccbfba50-04c3-40a7-b1b6-49905aaa7ca9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/remixPractice/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/remixPractice/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/remixPractice/EmployeeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/remixPractice/EmployeeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/remixPractice/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/remixPractice/PrintResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/remixPractice/Template.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ohgiraffers/remixPractice/EmployeeMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ccbfba50-04c3-40a7-b1b6-49905aaa7ca9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/project/remix-practice",
+    "last_opened_file_path": "C:/Lecture/09_MyBatis/01_lecture-source/chap04-dinamics-sql-lecture-source",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,6 +77,7 @@
       <updated>1712557414445</updated>
       <workItem from="1712557415434" duration="2400000" />
       <workItem from="1712559831930" duration="10840000" />
+      <workItem from="1712570933123" duration="41000" />
     </task>
     <servers />
   </component>
